@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98EA95D8-6236-43D2-A8E8-CB03DAC4F90A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLCuaHangQuanAo</RootNamespace>
+    <AssemblyName>QLCuaHangQuanAo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.10.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.10\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Google.Apis, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.55.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.55.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.55.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.55.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Gmail.v1, Version=1.55.0.2510, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Gmail.v1.1.55.0.2510\lib\net45\Google.Apis.Gmail.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.55.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.2.5, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.2.5\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=2.15.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.15.1\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control_User\Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_User\Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_User\HDcuaKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_User\HDcuaKH.Designer.cs">
+      <DependentUpon>HDcuaKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_User\Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_User\Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_User\list_order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_User\list_order.Designer.cs">
+      <DependentUpon>list_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_User\topList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_User\topList.Designer.cs">
+      <DependentUpon>topList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\CTHDDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\HoaDonDAO.cs" />
+    <Compile Include="DAO\SanPhamDAO.cs" />
+    <Compile Include="DAO\TaiKhoanDAO.cs" />
+    <Compile Include="DTO\BillInfo.cs" />
+    <Compile Include="DTO\CTHD.cs" />
+    <Compile Include="DTO\HOADON.cs" />
+    <Compile Include="DTO\KHACHHANG.cs" />
+    <Compile Include="DTO\LOAISP.cs" />
+    <Compile Include="DTO\SANPHAM.cs" />
+    <Compile Include="DTO\Item_HD.cs" />
+    <Compile Include="DTO\TAIKHOAN.cs" />
+    <Compile Include="Library.cs" />
+    <Compile Include="Performance\Customer_perfomances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Performance\Customer_perfomances.Designer.cs">
+      <DependentUpon>Customer_perfomances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Performance\Home_perfomancecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Performance\Home_perfomancecs.Designer.cs">
+      <DependentUpon>Home_perfomancecs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Performance\Invoice_performance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Performance\Invoice_performance.Designer.cs">
+      <DependentUpon>Invoice_performance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Performance\Statistics_perfomancecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Performance\Statistics_perfomancecs.Designer.cs">
+      <DependentUpon>Statistics_perfomancecs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Performance\Settings_performance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Performance\Settings_performance.Designer.cs">
+      <DependentUpon>Settings_performance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Performance\Store_performence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Performance\Store_performence.Designer.cs">
+      <DependentUpon>Store_performence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\AddSL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\AddSL.Designer.cs">
+      <DependentUpon>AddSL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\Add_Item_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Add_Item_Form.Designer.cs">
+      <DependentUpon>Add_Item_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\BILL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\BILL.Designer.cs">
+      <DependentUpon>BILL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\Cart_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Cart_Form.Designer.cs">
+      <DependentUpon>Cart_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\CRP_HOADON.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRP_HOADON.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SubForm\Detail_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Detail_Form.Designer.cs">
+      <DependentUpon>Detail_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\Edit_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Edit_Form.Designer.cs">
+      <DependentUpon>Edit_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\inHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\inHD.Designer.cs">
+      <DependentUpon>inHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\Product_Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Product_Bill.Designer.cs">
+      <DependentUpon>Product_Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SendEmail.Designer.cs">
+      <DependentUpon>SendEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\Show_creator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Show_creator.Designer.cs">
+      <DependentUpon>Show_creator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\TTKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\TTKH.Designer.cs">
+      <DependentUpon>TTKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Home.Designer.cs">
+      <DependentUpon>UI_Home.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Control_User\Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_User\HDcuaKH.resx">
+      <DependentUpon>HDcuaKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_User\Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_User\list_order.resx">
+      <DependentUpon>list_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_User\topList.resx">
+      <DependentUpon>topList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Performance\Customer_perfomances.resx">
+      <DependentUpon>Customer_perfomances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Performance\Home_perfomancecs.resx">
+      <DependentUpon>Home_perfomancecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Performance\Invoice_performance.resx">
+      <DependentUpon>Invoice_performance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Performance\Statistics_perfomancecs.resx">
+      <DependentUpon>Statistics_perfomancecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Performance\Settings_performance.resx">
+      <DependentUpon>Settings_performance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Performance\Store_performence.resx">
+      <DependentUpon>Store_performence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\AddSL.resx">
+      <DependentUpon>AddSL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Add_Item_Form.resx">
+      <DependentUpon>Add_Item_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\BILL.resx">
+      <DependentUpon>BILL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Cart_Form.resx">
+      <DependentUpon>Cart_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\CRP_HOADON.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRP_HOADON.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Detail_Form.resx">
+      <DependentUpon>Detail_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Edit_Form.resx">
+      <DependentUpon>Edit_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\inHD.resx">
+      <DependentUpon>inHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Product_Bill.resx">
+      <DependentUpon>Product_Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SendEmail.en.resx">
+      <DependentUpon>SendEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SendEmail.resx">
+      <DependentUpon>SendEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SendEmail.vi-VN.resx">
+      <DependentUpon>SendEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Show_creator.resx">
+      <DependentUpon>Show_creator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\TTKH.resx">
+      <DependentUpon>TTKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Home.resx">
+      <DependentUpon>UI_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Instagram_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter_squared_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sent_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sent_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window_64px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle_full_screen_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_page_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online_store_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\handshake_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_50px.png" />
+    <None Include="Resources\hourglass1.png" />
+    <None Include="Resources\hourglass.png" />
+    <None Include="Resources\x-button1.png" />
+    <None Include="Resources\x-button.png" />
+    <None Include="Resources\sand-clock.png" />
+    <None Include="Resources\shipped_48px.png" />
+    <None Include="Resources\shipped_24px.png" />
+    <None Include="Resources\invoice.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\chronometer.png" />
+    <None Include="Resources\chronometer1.png" />
+    <None Include="Resources\crowd %281%29.png" />
+    <None Include="Resources\crown.png" />
+    <None Include="Resources\female_User.png" />
+    <None Include="Resources\male_User.png" />
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hiiii1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arow_right_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arow_right_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Giay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arow_right_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arow_right_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arow_right_brown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shirt1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trouser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_main.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_main_gif.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
